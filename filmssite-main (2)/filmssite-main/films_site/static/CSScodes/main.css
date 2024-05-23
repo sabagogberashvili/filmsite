@@ -1,0 +1,33 @@
+
+.bar {
+    width: 60%;
+
+    background-color: #1d2a35;
+}
+
+
+.bar a {
+    color: rgb(151, 151, 151); 
+    text-decoration: none;
+    padding: 10px 20px; 
+    display: inline-block; 
+}
+
+
+.bar a:hover {
+    color: #1399FC;
+}
+
+body {
+    background: rgb(226, 226, 226);
+    background-size: cover; 
+}
+::-webkit-scrollbar{
+    width:15px;
+}
+::-webkit-scrollbar-track{
+    background:white;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#1d2a35,#1399FC)
+}

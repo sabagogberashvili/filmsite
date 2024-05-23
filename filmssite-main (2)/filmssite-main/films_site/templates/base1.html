@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSScodes/main.css') }}">
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+    <style>
+        .bar {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 1%;
+            left: 20%;
+            height: 70px;
+            background-color: #1d2a35;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu a {
+            margin: 0 40px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            z-index: 1;
+        }
+
+        .search-form {
+            margin-left: 40px;
+        }
+
+        .search-form input[type="text"],
+        .search-form button {
+            height: 30px;
+            padding: 0 30px;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        .search-form button {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .white-box {
+            width: 1140px;
+            height: 1600px;
+            background-color: #ffffff;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            z-index: -1;
+        }
+        .filmsanduser{
+            position:absolute;
+            left:45%;
+            top:30%;
+        }
+    </style>
+    <title>{% block title %}მთავარი გვერდი{% endblock %}</title>
+</head>
+<body>
+    <h1 style="position:absolute; left:1%; top:-2%; font-size: 50px; margin-bottom: 40px;">Adjaranet.com</h1>
+    <nav class="bar">
+        <div class="white-box"></div>
+        <div class="menu">
+            <a href="{{ url_for('homepage') }}">მთავარი გვერდი</a>
+            <a href="{{ url_for('films') }}">ფილმის დამატება</a>
+            <a href="{{ url_for('dashboard') }}">აქაუნთი</a>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
